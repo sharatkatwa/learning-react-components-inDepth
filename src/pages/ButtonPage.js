@@ -5,14 +5,7 @@ function ButtonPage() {
   return (
     <div>
       <div>
-        <Button
-          success
-          rounded
-          outline
-          onClick={() => {
-            console.log('clicked....')
-          }}
-        >
+        <Button success rounded outline>
           <GoBeaker />
           Hi There!
         </Button>
