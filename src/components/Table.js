@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 function Table({ data, config, keyFn }) {
   const renderedRows = data.map((rowData) => {
@@ -17,6 +17,9 @@ function Table({ data, config, keyFn }) {
   })
 
   const renderedHeaders = config.map((column) => {
+    if (column.header) {
+      return <Fragment key={column.label}>{column.header()}</Fragment>
+    }
     return <th key={column.label}>{column.label}</th>
   })
   return (
